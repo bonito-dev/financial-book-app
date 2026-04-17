@@ -11,9 +11,13 @@ class IncomeAllocation(Base):
     budget_rule_id    = Column(Integer, ForeignKey("budget_rules.id"), nullable=False)
     category          = Column(String(50), nullable=False)
     allocated_amount  = Column(Float, nullable=False)
+
+    # Investment/Savings sub-split
+    investment_amount = Column(Float, nullable=True)  # allocated_amount / 2
+    savings_amount    = Column(Float, nullable=True)  # allocated_amount / 2
+
     created_at        = Column(DateTime, default=func.now())
 
-    # Relationships — lets you navigate between tables in Python
     income_entry = relationship("IncomeEntry", backref="allocations")
     budget_rule  = relationship("BudgetRule", backref="allocations")
 

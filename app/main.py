@@ -3,6 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core import APP_NAME
 from app.database import engine, Base
 from app.routes.income import router as income_router  # add this import
+from app.routes.transactions import router as transactions_router
+from app.routes.balances import router as balances_router
 import app.models  # ensures all models are registered
 
 # ── Create all tables on startup (safe — skips existing tables) ──
@@ -25,6 +27,8 @@ app.add_middleware(
 )
 
 app.include_router(income_router)
+app.include_router(transactions_router)
+app.include_router(balances_router)
 
 # ── Health check ─────────────────────────────────────────────────
 @app.get("/", tags=["Health"])

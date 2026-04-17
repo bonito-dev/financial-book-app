@@ -93,11 +93,17 @@ def process_income_allocation(
         remaining = round(gross_amount - total_deducted, 2)
 
         # Save this allocation
+        # Determine investment/savings split
+        inv_amount = round(allocated / 2, 2) if rule.category == "Investment/Savings" else None
+        sav_amount = round(allocated / 2, 2) if rule.category == "Investment/Savings" else None
+
         allocation = IncomeAllocation(
             income_entry_id=income_entry_id,
             budget_rule_id=rule.id,
             category=rule.category,
-            allocated_amount=allocated
+            allocated_amount=allocated,
+            investment_amount=inv_amount,
+            savings_amount=sav_amount
         )
         db.add(allocation)
         allocations.append({
@@ -110,12 +116,16 @@ def process_income_allocation(
     # ── Step 4: Apply percentage rules to remaining amount ────────
     for rule in percentage_rules:
         allocated = round(remaining * (rule.percentage or 0.0), 2)
+        inv_amount = round(allocated / 2, 2) if rule.category == "Investment/Savings" else None
+        sav_amount = round(allocated / 2, 2) if rule.category == "Investment/Savings" else None
 
         allocation = IncomeAllocation(
             income_entry_id=income_entry_id,
             budget_rule_id=rule.id,
             category=rule.category,
-            allocated_amount=allocated
+            allocated_amount=allocated,
+            investment_amount=inv_amount,
+            savings_amount=sav_amount
         )
         db.add(allocation)
         allocations.append({
