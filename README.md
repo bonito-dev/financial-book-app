@@ -155,15 +155,16 @@ uvicorn app.main:app --reload
 
 ## 📍 Project Roadmap
 
-### Phase 1 — Backend Foundation *(in progress)*
+### Phase 1 — Backend Foundation *(complete ✅)*
 - [x] Project structure & environment setup
 - [x] Database schema design
 - [x] SQLAlchemy models (Income, Rules, Allocations, Transactions, Debts)
 - [x] Budget rules seeded with SCD Type 2 versioning
-- [ ] FastAPI entry point
-- [ ] Income logging API + allocation engine
-- [ ] Transactions API
-- [ ] Debts API
+- [x] Allocation engine (deductions + top-up + percentages)
+- [x] Income logging API + allocation engine
+- [x] Transactions API
+- [x] Balances API (live calculated)
+- [x] Debts API
 
 ### Phase 2 — Frontend
 - [ ] React project setup
