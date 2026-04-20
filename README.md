@@ -1,7 +1,7 @@
 # 📒 Financial Book App
 
 A personal finance tracking web application built around rule-based, 
-automatic budget allocation — designed for irregular, multi-source income.
+automatic budget allocation - designed for irregular, multi-source income.
 
 > Built by [Boniface Kibet](https://github.com/YOUR_GITHUB_USERNAME) as both 
 > a personal finance tool and a Data Engineering portfolio project.
@@ -24,19 +24,19 @@ starting as a personal tool, with plans to open it to other users in 2027.
 
 ## ✨ Key Features
 
-- **Multi-source income logging** — supports 7 income categories, each with subtypes
-- **Rule-based auto-allocation** — income is automatically split into budget buckets 
+- **Multi-source income logging** - supports 7 income categories, each with subtypes
+- **Rule-based auto-allocation** - income is automatically split into budget buckets 
   based on configurable rules per income category
-- **Smart deduction ordering** — certain deductions (e.g. Tithe, Fare) are processed 
+- **Smart deduction ordering** - certain deductions (e.g. Tithe, Fare) are processed 
   before percentage splits, in a defined sequence
-- **Fare top-up logic** — transport budget is topped up to a target amount monthly, 
+- **Fare top-up logic** - transport budget is topped up to a target amount monthly, 
   not blindly allocated
-- **Full audit trail** — every allocation is linked to the exact rule version that 
+- **Full audit trail** - every allocation is linked to the exact rule version that 
   produced it (Slowly Changing Dimension Type 2)
-- **Rule history** — budget rules are versioned, so changing a rule never 
+- **Rule history** - budget rules are versioned, so changing a rule never 
   corrupts historical data
-- **Debt tracking** — named loans and personal payment obligations
-- **Transaction ledger** — full record of money moving in and out of each bucket
+- **Debt tracking** - named loans and personal payment obligations
+- **Transaction ledger** - full record of money moving in and out of each bucket
 
 ---
 
@@ -155,7 +155,7 @@ uvicorn app.main:app --reload
 
 ## 📍 Project Roadmap
 
-### Phase 1 — Backend Foundation *(complete ✅)*
+### Phase 1 - Backend Foundation *(complete ✅)*
 - [x] Project structure & environment setup
 - [x] Database schema design
 - [x] SQLAlchemy models (Income, Rules, Allocations, Transactions, Debts)
@@ -166,20 +166,20 @@ uvicorn app.main:app --reload
 - [x] Balances API (live calculated)
 - [x] Debts API
 
-### Phase 2 — Frontend
+### Phase 2 - Frontend
 - [ ] React project setup
 - [ ] Income logging form
 - [ ] Budget dashboard (balances per category)
 - [ ] Transaction ledger view
 - [ ] Debt tracker
 
-### Phase 3 — Intelligence & Reporting
+### Phase 3 - Intelligence & Reporting
 - [ ] Monthly income trend charts
 - [ ] Budget health indicators
 - [ ] 52-Week Savings Challenge tracker
 - [ ] Rule change history viewer
 
-### Phase 4 — Multi-user (2027)
+### Phase 4 - Multi-user (2027)
 - [ ] User authentication (JWT)
 - [ ] Per-user budget rule customisation
 - [ ] PostgreSQL migration
@@ -191,19 +191,19 @@ uvicorn app.main:app --reload
 
 This project is being built as a hands-on learning journey through:
 
-- **SQL & Relational Data Modelling** — schema design, primary/foreign keys, normalisation
-- **Slowly Changing Dimensions (SCD Type 2)** — versioning data that changes over time
-- **FastAPI** — building REST APIs with Python
-- **SQLAlchemy ORM** — database interaction without raw SQL
-- **React** — component-based frontend development
-- **Git & GitHub** — version control and portfolio management
-- **Data Engineering principles** — ETL thinking, pipeline design, audit trails
+- **SQL & Relational Data Modelling** - schema design, primary/foreign keys, normalisation
+- **Slowly Changing Dimensions (SCD Type 2)** - versioning data that changes over time
+- **FastAPI** - building REST APIs with Python
+- **SQLAlchemy ORM** - database interaction without raw SQL
+- **React** - component-based frontend development
+- **Git & GitHub** - version control and portfolio management
+- **Data Engineering principles** - ETL thinking, pipeline design, audit trails
 
 ---
 
 ## 📄 License
 
-This project is currently unlicensed — all rights reserved.
+This project is currently unlicensed - all rights reserved.
 A licence will be added before the public launch in 2027.
 
 ---
